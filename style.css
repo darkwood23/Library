@@ -74,3 +74,19 @@ form > button {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.remove-button {
+    background-color: red;
+    color: whitesmoke;
+    border: 2px solid yellow;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 100%, 70%);
+}
+
+.remove-button:active {
+    background-color: black;
+}
