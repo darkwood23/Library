@@ -41,6 +41,21 @@ Books.prototype.displayBooks = function() {
     }
 }
 
+Books.prototype.showForm = function() {
+    console.log("Hello world")
+    if (onlyForm.style.display === "none") {
+        onlyForm.style.display = "block"
+    } else {
+        onlyForm.style.display = "none"
+    }
+}
+
+Books.prototype.displayNewBooks = function() {
+    myLibrary.push(this.newBookTitle.toString())
+    removeEverything()
+    everything()
+}
+
 function deleteBook(a) {
     console.log(a)
     myLibrary.splice(a, 1)
@@ -61,9 +76,14 @@ function Display() {
     this.books = document.querySelector(".books")
 }
 
-Display.prototype = Object.create(Books.prototype)
+function addNewBook() {
+    this.newBookTitle = document.querySelector("#book-name").value
+}
 
-function removeEverything() {
+function Form() {
+}
+
+const removeEverything = () => {
     Texts.prototype = Object.create(Books.prototype)
 
     const tagger = new Texts("")
@@ -71,6 +91,22 @@ function removeEverything() {
     tagger.changeText()
 }
 
+const displayForm = () => {
+    Form.prototype = Object.create(Books.prototype)
+    const formForm = new Form()
+    formForm.showForm()
+}
 
-const displayingBooks = new Display()
-displayingBooks.displayBooks()
+const everything = () => {
+    Display.prototype = Object.create(Books.prototype)
+    const displayingBooks = new Display()
+    displayingBooks.displayBooks()
+}
+
+const addBookToLibrary = () => {
+    addNewBook.prototype = Object.create(Books.prototype)
+    const newBook = new addNewBook()
+    newBook.displayNewBooks()
+}
+
+everything()
