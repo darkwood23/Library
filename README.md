@@ -1,5 +1,5 @@
 # Library
-A simple library app to view some names of books and be able to add new books aswell
+The same library app but built using prototypes
 
 # Learning outcomes from this project:
 1) Being familiar with prototypes
