@@ -2,46 +2,18 @@ let myLibrary = ["Permanent Record", "MEGA-LIVING", "Rich Dad Poor Dad", "Atomic
 const onlyForm = document.querySelector(".one-and-only-form")
 onlyForm.style.display = "none"
 
-function Book() {
+function Books() {
 
 }
 
-function removeEverything() {
-    const books = document.querySelector(".books")
-    const author = document.querySelector('#book-writer')
-    const title = document.querySelector("#book-name")
-    author.value = ""
-    title.value = ""
-    books.textContent = ""
+Books.prototype.changeText = function() {
+    this.books.textContent = this.texter
+    this.author.value = this.texter
+    this.title.value = this.texter
 }
 
-function addBookToLibrary() {
-    const title = document.querySelector("#book-name").value
-    myLibrary.push(title.toString())
-    removeEverything()
-    displayBooks()
-}
-
-function displayForm() {
-    if (onlyForm.style.display === "none") {
-        onlyForm.style.display = "block"
-    } else {
-        onlyForm.style.display = "none"
-    }
-}
-
-function deleteBook(a) {
-    console.log(a)
-    myLibrary.splice(a, 1)
-    const books = document.querySelector(".books")
-    books.textContent = ""
-    displayBooks()
-}
-
-function displayBooks() {
+Books.prototype.displayBooks = function() {
     for(i = 0; i < myLibrary.length; i++) {
-        const books = document.querySelector(".books")
-
         let pTag = document.createElement("p")
         let alreadyRead = document.createElement('input')
         let labelTag = document.createElement('label')
@@ -65,8 +37,76 @@ function displayBooks() {
         contentHolder.appendChild(pTag)
         contentHolder.appendChild(placeHolder)
         contentHolder.appendChild(removeBookButton)
-        books.appendChild(contentHolder)
+        this.books.appendChild(contentHolder)
     }
 }
 
-displayBooks()
+Books.prototype.showForm = function() {
+    console.log("Hello world")
+    if (onlyForm.style.display === "none") {
+        onlyForm.style.display = "block"
+    } else {
+        onlyForm.style.display = "none"
+    }
+}
+
+Books.prototype.displayNewBooks = function() {
+    myLibrary.push(this.newBookTitle.toString())
+    removeEverything()
+    everything()
+}
+
+function deleteBook(a) {
+    console.log(a)
+    myLibrary.splice(a, 1)
+    const books = document.querySelector(".books")
+    books.textContent = ""
+    const showBook = new Display()
+    showBook.displayBooks()
+}
+
+function Texts(texter) {
+    this.texter = texter
+    this.books = document.querySelector(".books")
+    this.author = document.querySelector('#book-writer')
+    this.title = document.querySelector("#book-name")
+}
+
+function Display() {
+    this.books = document.querySelector(".books")
+}
+
+function addNewBook() {
+    this.newBookTitle = document.querySelector("#book-name").value
+}
+
+function Form() {
+}
+
+const removeEverything = () => {
+    Texts.prototype = Object.create(Books.prototype)
+
+    const tagger = new Texts("")
+
+    tagger.changeText()
+}
+
+const displayForm = () => {
+    Form.prototype = Object.create(Books.prototype)
+    const formForm = new Form()
+    formForm.showForm()
+}
+
+const everything = () => {
+    Display.prototype = Object.create(Books.prototype)
+    const displayingBooks = new Display()
+    displayingBooks.displayBooks()
+}
+
+const addBookToLibrary = () => {
+    addNewBook.prototype = Object.create(Books.prototype)
+    const newBook = new addNewBook()
+    newBook.displayNewBooks()
+}
+
+everything()
