@@ -1,5 +1,5 @@
 # Library
-A simple program that lets you view and
+A simple library app to view some names of books and be able to add new books aswell
 
 # Skill aquired
 1) DOM manipulation
