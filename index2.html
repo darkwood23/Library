@@ -5,9 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <script src="script2.js" defer></script>
-    <p id="pTag"></p>
+    <div class="all-elements">
+        <div class="top-bar">
+            <h1>The Zen Library</h1>
+            <div class="forms">
+                <button onclick="displayForm()" id="add-book">Add Book</button>
+                <form action="" class="one-and-only-form">
+                    <label for="book-name">Title:</label>
+                    <input type="text" id="book-name">
+                    <label for="book-writer">Author:</label>
+                    <input type="text" id="book-writer">
+                    <button onclick="addBookToLibrary()" type="button">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="books">
+
+        </div>
 </body>
 </html>
